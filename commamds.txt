@@ -6,7 +6,13 @@ g++ main.cpp ii.cpp input_cvadratka.cpp compare_double1_and_double2.cpp testing_
 
 
 git --version  //просмотреть версию программы git 
-    config --global user.name "..."  //добавить имя
+git config --global user.name "..."  //добавить имя
                     user.email "..."  //добавить почту
     init  //инициализировать, запустить 
     add -A //добавить все файлы директории
+    status  //что происходит
+git commit -m "add git to my project"  //создаёт комит, сохранение
+git log  //показывает историю комитов
+git remote -v  //список всех удалённых хостов (сайтов, сервиров) 
+git remote add origin https://github.com/Alexandr26Starostin/Cvadratka.git  //
+git push origin main  //
