@@ -1,3 +1,12 @@
+/*!
+    \breaf Данный модуль отвечает за тестирование программы.
+
+    В себе модуль содержит функцию с тестами для проверки верности алгоритма квадратного уравнения. 
+    Модуль начинает работу сразу после запуска программы.
+    В случае ошибки, выявленной тестами, печатается тест, который выявил ошибку и в main и в консоль возвращается значение "1".
+    При успешной проверке решения квадратного уравнения модуль возвращает в main значение "0", не прерывает программу и передает управление следующему модулю. 
+*/
+
 #ifndef TESTING_CVADRATKA_H
 #define TESTING_CVADRATKA_H
 
@@ -9,9 +18,14 @@ struct data_for_test
     enum quantity_roots quantity_right;
 };
 
+/*!
+    \breaf Данная функция содержит в себе список всех тестов.
+
+    Функция обращается внутри себя к каждому тесту и отправляет их на проверку алгоритма решения квадратного уравнения.
+    Возвращает "1" в main случае провала какого-либо теста. 
+    Возвращает "0" в main случае успеха всех тестов.  
+*/
+
 int have_all_tests (void);
-int begin_one_test (data_for_test data);
-void print_text_when_error_without_decisions (int tests, double a, double b, double c, int quantity_right, int quantity);
-void print_text_when_error_with_decisions (int tests, double a, double b, double c, double x1_right, double x2_rignt, int quantity_right, int quantity, double x1, double x2);
 
 #endif

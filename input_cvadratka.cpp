@@ -7,6 +7,16 @@
 
 const int ALL_NUMBERS = 3;
 
+/*!
+    \breaf Функция проверяет корректность ввода после третьего коэффициента
+
+    Считает ввод корректным, если после третьего коэффиента нет лишних символов.
+    Возвращает true при корректном вводе.
+    Возвращает false при некорректном вводе.
+*/
+
+static int check_end_of_line (void);
+
 void input_cvadratka (coefficients* numbers_ptr)
 {
     assert(numbers_ptr);
@@ -33,7 +43,7 @@ int check_end_of_line (void)
     
     while ((flow = getchar()) != '\n' && flow != EOF)
     {
-        if (flow != ' ')
+        if (flow != ' ' && flow != '\t')
         {
             flag_of_end_line = false;
             break;
