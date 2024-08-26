@@ -1,9 +1,9 @@
 #include <TXLib.h>
 
 #include "list_of_const.h"
-#include "ii.h"
 #include "input_cvadratka.h"
 #include "color_of_system.h"
+#include "ii.h"
 
 const int ALL_NUMBERS = 3;
 

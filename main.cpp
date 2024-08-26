@@ -3,11 +3,11 @@
 #include <stdarg.h>
 
 #include "list_of_const.h"
+#include "testing_cvadratka.h"
+#include "input_cvadratka.h"
 #include "solve_square.h"
 #include "ii.h"
-#include "input_cvadratka.h"
 #include "compare_double1_and_double2.h"
-#include "testing_cvadratka.h"
 #include "answer_square.h"
 #include "color_of_system.h"
 
@@ -22,11 +22,11 @@ int main()
 
     input_cvadratka (&numbers);
 
-    double  x1 = NAN, x2 = NAN;
+    struct answer roots = {.x1 = NAN, .x2 = NAN};
     
-    enum quantity_roots quantity = solve_square_with_slip (numbers.a, numbers.b, numbers.c, &x1, &x2);
+    enum quantity_roots quantity = solve_square_with_slip (numbers.a, numbers.b, numbers.c, &(roots.x1), &(roots.x2));
 
-    answer_square ((enum quantity_roots) quantity, x1, x2);
+    answer_square ((enum quantity_roots) quantity, roots.x1, roots.x2);
 
     return 0;
 }

@@ -1,4 +1,5 @@
 #include <TXLib.h>
+
 #include "compare_double1_and_double2.h"
 
 const double RULER = 0.001;

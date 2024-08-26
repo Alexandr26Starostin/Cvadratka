@@ -4,8 +4,8 @@
 #include "solve_square.h"
 #include "compare_double1_and_double2.h"
 #include "solve_line.h"
-#include "ii.h"
 #include "color_of_system.h"
+#include "ii.h"
 
 enum quantity_roots solve_square (double a, double b, double c, double* x1, double* x2)
 {

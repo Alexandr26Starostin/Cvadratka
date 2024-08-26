@@ -18,7 +18,7 @@ int have_all_tests (void)
                     {.number = 6,  .a = 1,    .b = 3,    .c = -4,     .x1_right = -4,       .x2_right = 1,         .quantity_right = TWO_ROOTS },
                     {.number = 7,  .a = 0.5,  .b = 0.6,  .c = 9,      .x1_right = NAN,      .x2_right = NAN,       .quantity_right = NOT_ROOTS },
                     {.number = 8,  .a = 1,    .b = 2,    .c = 1,      .x1_right = -1,       .x2_right = -1,        .quantity_right = ONE_ROOT  },
-                    {.number = 9,  .a = 1,    .b = 0,    .c = 1,      .x1_right = NAN,      .x2_right = NAN,        .quantity_right = NOT_ROOTS },
+                    {.number = 9,  .a = 1,    .b = 0,    .c = 1,      .x1_right = NAN,      .x2_right = NAN,       .quantity_right = NOT_ROOTS },
                     {.number = 10, .a = 2,    .b = 0,    .c = -8,     .x1_right = -2,       .x2_right = 2,         .quantity_right = TWO_ROOTS },
                     {.number = 11, .a = 1,    .b = -2,   .c = 1,      .x1_right = 1,        .x2_right = 1,         .quantity_right = ONE_ROOT  },
                     {.number = 12, .a = 0,    .b = 100,  .c = 0,      .x1_right = 0,        .x2_right = 0,         .quantity_right = ONE_ROOT  },
@@ -27,8 +27,10 @@ int have_all_tests (void)
                     {.number = 15, .a = 7.77, .b = 7.7,  .c = -7.777, .x1_right = -1.61193, .x2_right = 0.620935,  .quantity_right = TWO_ROOTS },
                     {.number = 16, .a = 0,    .b = 0,    .c = 0.01,   .x1_right = NAN,      .x2_right = NAN,       .quantity_right = NOT_ROOTS }};
 
-    for (int i = 0; i < 16; ++i)
+    for (size_t i = 0; i < sizeof (have_all_tests) / sizeof (have_all_tests[0]); ++i)
     {
+        assert (i <= (sizeof (have_all_tests) / sizeof (have_all_tests[0])));
+
         if (begin_one_test (have_all_tests[i]))
         {
             return 1;
@@ -69,19 +71,19 @@ int begin_one_test (data_for_test data)
 void print_text_when_error_without_decisions (int tests, double a, double b, double c, int quantity_right, int quantity)
 {
     print_with_color(ORDINARY_STYLE, RED_TEXT, BLACK_BACKGROUND, "Test: %d  a = %lg b = %lg c = %lg\t" 
-                                                                         "Error: quantity = %d\t"
-                                                                         "Right: quantity_right = %d\n",
-                                                                         tests, a, b, c,
-                                                                         quantity,
-                                                                         quantity_right);
+                                                                 "Error: quantity = %d\t"
+                                                                 "Right: quantity_right = %d\n",
+                                                                 tests, a, b, c,
+                                                                 quantity,
+                                                                 quantity_right);
 }
 
 void print_text_when_error_with_decisions (int tests, double a, double b, double c, double x1_right, double x2_right, int quantity_right, int quantity, double x1, double x2)
 {
     print_with_color(ORDINARY_STYLE, RED_TEXT, BLACK_BACKGROUND, "Test: %d  a = %lg b = %lg c = %lg\t"
-                                                                         "Error: quantity = %d  x1 = %lg  x2 = %lg"
-                                                                         "Right: quantity_right = %d  x1_right = %lg  x2_right = %lg\n",
-                                                                         tests, a, b, c,
-                                                                         quantity, x1, x2,
-                                                                         quantity_right, x1_right, x2_right);
+                                                                 "Error: quantity = %d  x1 = %lg  x2 = %lg"
+                                                                 "Right: quantity_right = %d  x1_right = %lg  x2_right = %lg\n",
+                                                                 tests, a, b, c,
+                                                                 quantity, x1, x2,
+                                                                 quantity_right, x1_right, x2_right);
 }

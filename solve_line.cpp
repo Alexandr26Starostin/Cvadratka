@@ -1,10 +1,10 @@
 #include <TXLib.h>
 
 #include "list_of_const.h"
-#include "compare_double1_and_double2.h"
 #include "solve_line.h"
-#include "ii.h"
+#include "compare_double1_and_double2.h"
 #include "color_of_system.h"
+#include "ii.h"
 
 enum quantity_roots solve_line (double b, double c, double* x1, double* x2)
 {
