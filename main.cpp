@@ -27,6 +27,7 @@ int main()
     enum quantity_roots quantity = solve_square_with_slip (numbers.a, numbers.b, numbers.c, &(roots.x1), &(roots.x2));
 
     answer_square ((enum quantity_roots) quantity, roots.x1, roots.x2);
+    
 
     return 0;
 }
