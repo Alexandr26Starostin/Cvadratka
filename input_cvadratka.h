@@ -7,7 +7,6 @@ struct coefficients
 };
 
 void input_cvadratka (coefficients* numbers_ptr);
-void delete_buffer (void);
 int check_end_of_line (void);
 
 #endif

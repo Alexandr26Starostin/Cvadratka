@@ -19,32 +19,26 @@ void input_cvadratka (coefficients* numbers_ptr)
     print_with_color (ORDINARY_STYLE, YELLOW_TEXT, BLACK_BACKGROUND, "Write coefficients a, b, c\n");
     how_many_numbers_right = scanf ("%lg %lg %lg", &((*numbers_ptr).a), &((*numbers_ptr).b), &(numbers_ptr->c));
 
-    while (how_many_numbers_right != ALL_NUMBERS )
+    while (how_many_numbers_right != ALL_NUMBERS || !check_end_of_line ())
     {
-        delete_buffer ();
-
         print_with_color (ORDINARY_STYLE, YELLOW_TEXT, BLACK_BACKGROUND, "Repeat, please...\n\n");
         how_many_numbers_right = scanf ("%lg %lg %lg",  &((*numbers_ptr).a), &((*numbers_ptr).b), &(numbers_ptr->c));
-
-        if (check_end_of_line ())
-        {
-            how_many_numbers_right = 0;   
-        }
     }
 }
 
-void delete_buffer (void)
-{
-    int flow = 0;
-    while ((flow = getchar()) != '\n' && flow != EOF) {}
-}
-
 int check_end_of_line (void)
-{
-    int flow = 0;
-    if ((flow = getchar()) != '\n')
+{  
+    bool flag_of_end_line = true;
+    int flow = 0;   //true - после третьего числа нет букв
+    
+    while ((flow = getchar()) != '\n' && flow != EOF)
+    {
+        if (flow != ' ')
         {
-            return 1;
+            flag_of_end_line = false;
+            break;
         }
-    return 0;
- }
+    } 
+
+    return flag_of_end_line;   
+}
