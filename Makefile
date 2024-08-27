@@ -2,7 +2,7 @@
 CC=g++
 
 #файлы 
-FILES=main.o testing_cvadratka.o input_cvadratka.o solve_square.o solve_line.o answer_square.o compare_double1_and_double2.o color_of_system.o ii.o
+FILES=main.o testing_cvadratka.o input_coefficients.o solve_square.o solve_line.o answer_square.o compare_double1_and_double2.o color_of_system.o ii.o
 
 #исполнитель
 OUT_PROG=-o a.exe
@@ -21,8 +21,8 @@ main.o: main.cpp
 testing_cvadratka.o: testing_cvadratka.cpp
 	$(CC) $(DED_FLAGS) testing_cvadratka.cpp
 
- input_cvadratka.o: input_cvadratka.cpp
-	$(CC) $(DED_FLAGS) input_cvadratka.cpp
+ input_cvadratka.o: input_coefficients.cpp
+	$(CC) $(DED_FLAGS) input_coefficients.cpp
 
 solve_square.o: solve_square.cpp
 	$(CC) $(DED_FLAGS) solve_square.cpp

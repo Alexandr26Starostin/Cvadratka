@@ -20,7 +20,7 @@ void answer_square (enum quantity_roots quantity, double x1, double x2)
     case MORE_ROOTS: print_with_color(ORDINARY_STYLE, GREEN_TEXT, BLACK_BACKGROUND, "decision - any real number\n"); 
             break;
 
-    default: print_with_color(ORDINARY_STYLE, RED_TEXT, BLACK_BACKGROUND, "main, ERROR\n"); 
+    default: print_with_color(ORDINARY_STYLE, RED_TEXT, BLACK_BACKGROUND, "%s, ERROR\n", __func__); 
         break;
     }
 }

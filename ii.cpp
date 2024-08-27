@@ -6,7 +6,10 @@
 
 void ii(void)
 {
-    txSleep (1000);
-    for (int i = 0; i < 3; i++) { print_with_color (ORDINARY_STYLE, YELLOW_TEXT, BLACK_BACKGROUND, "."); txSleep (1000); }
+    const unsigned delay = 300;
+    const int number_of_dots = 4;
+
+    txSleep (delay);
+    for (int i = 0; i < number_of_dots; i++) { print_with_color (ORDINARY_STYLE, YELLOW_TEXT, BLACK_BACKGROUND, "."); txSleep (delay); }
     printf ("\n");
 }

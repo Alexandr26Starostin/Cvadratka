@@ -53,5 +53,4 @@ enum color_of_background
     TURQUOISE_BACKGROUND = 46,       //бирюзовый
     WHITE_BACKGROUND     = 47,       //белый
 };
-
 #endif

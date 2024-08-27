@@ -1,4 +1,5 @@
 #include <TXLib.h>
+#include <math.h>
 
 #include "list_of_const.h"
 #include "testing_cvadratka.h"
@@ -57,17 +58,19 @@ int have_all_tests (void)
                     {.number = 15, .a = 7.77, .b = 7.7,  .c = -7.777, .x1_right = -1.61193, .x2_right = 0.620935,  .quantity_right = TWO_ROOTS },
                     {.number = 16, .a = 0,    .b = 0,    .c = 0.01,   .x1_right = NAN,      .x2_right = NAN,       .quantity_right = NOT_ROOTS }};
 
+    bool flag_of_test = true;   //все тесты работает
+
     for (size_t i = 0; i < sizeof (have_all_tests) / sizeof (have_all_tests[0]); ++i)
     {
         assert (i <= (sizeof (have_all_tests) / sizeof (have_all_tests[0])));
 
         if (begin_one_test (have_all_tests[i]))
         {
-            return 1;
+            flag_of_test = false;    
         }
     }
-
-    return 0;
+    
+    return (int) !flag_of_test;
 }
 
 int begin_one_test (data_for_test data)
