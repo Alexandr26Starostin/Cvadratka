@@ -54,7 +54,7 @@ enum quantity_roots solve_square_with_slip (double a, double b, double c, double
     assert (x2);
 
     double discriminant = ((b * b) - (4 * a * c));
-    double a2           = 2 * a; //TODO naming
+    double a2           = 2 * a;
 
     print_with_color (ORDINARY_STYLE, YELLOW_TEXT, BLACK_BACKGROUND, "Checking coefficients");
     ii ();
@@ -63,14 +63,14 @@ enum quantity_roots solve_square_with_slip (double a, double b, double c, double
     {
         print_with_color (ORDINARY_STYLE, YELLOW_TEXT, BLACK_BACKGROUND, "ATTENTION! a != 0! Non-trival square equation FOUND!\n");
         print_with_color (ORDINARY_STYLE, YELLOW_TEXT, BLACK_BACKGROUND, "Calculating discriminant");
-        ii (); //TODO naming
+        ii ();
 
-        if (discriminant > 0) //TODO read about double zero_approximation
+        if (discriminant > 0)
         {
             print_with_color (ORDINARY_STYLE, YELLOW_TEXT, BLACK_BACKGROUND, "Calculating roots");
             ii ();
 
-            double sq = sqrt (discriminant); //TODO naming
+            double sq = sqrt (discriminant);
 
             *x1 = (- b - sq) / (a2);
 
