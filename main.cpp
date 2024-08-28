@@ -26,7 +26,7 @@ int main()
 
     struct coefficients numbers = {.a = NAN, .b = NAN, .c = NAN};
 
-    input_coefficients (&numbers); //TODO naming
+    input_coefficients (&numbers);
 
     struct answer roots = {.x1 = NAN, .x2 = NAN};
     
